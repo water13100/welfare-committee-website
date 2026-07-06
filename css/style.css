@@ -1,0 +1,350 @@
+/* ===== CSS Variables ===== */
+:root {
+  --primary:        #EB5A41;
+  --primary-400:    #F8C4BB;
+  --primary-200:    #FBE1DD;
+  --secondary-dark: #428ECC;
+  --secondary-light:#C1E3FF;
+  --yellow:         #FAD782;
+  --green-light:    #BEE2BA;
+  --text:           #4A4A4A;
+  --text-secondary: #808080;
+  --border:         #ECF1F4;
+  --bg:             #F7F0E7;
+  --bg-light:       #FDFCFA;
+}
+
+/* ===== Reset ===== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  color: var(--text);
+  background: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* 覆蓋 Bootstrap container 最大寬度 */
+.container {
+  max-width: 1200px;
+}
+
+/* ===== HEADER ===== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+}
+
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  margin-right: 24px;
+}
+
+.utility-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 0;
+  font-size: 13px;
+}
+
+.utility-nav a {
+  color: var(--secondary-dark);
+  font-size: 13px;
+  transition: opacity 0.15s;
+}
+
+.utility-nav a:hover {
+  opacity: 0.75;
+}
+
+.utility-nav .divider {
+  color: var(--border);
+  user-select: none;
+}
+
+/* Main nav bar */
+.header-main {
+  padding: 14px 0;
+  border-radius: 0 0 24px 24px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+
+.logo img {
+  height: 34px;
+  display: block;
+}
+
+
+.main-nav {
+  display: flex;
+  gap: 40px;
+}
+
+.main-nav a {
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 0.15s;
+}
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.2s;
+}
+
+.main-nav a:hover {
+  color: var(--primary);
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+/* ===== HERO — 常用服務 ===== */
+.hero {
+  background: var(--bg) url('../images/hero-background.svg') center center / cover no-repeat;
+  padding-top: 56px;
+  position: relative;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 40px;
+}
+
+.service-cards {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text);
+}
+
+.card-icon {
+  width: 200px;
+  height: 180px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+
+}
+
+.service-card:hover .card-icon {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon img {
+  width: 80px;
+  height: 80px;
+}
+
+.service-card span {
+  font-size: 18px;
+}
+
+/* Decorative vertical line */
+.hero-divider {
+  width: 1px;
+  height: 48px;
+  background: #808080;
+}
+.hero-divider-2 {
+  width: 4px;
+  height: 4px;
+  background: #808080;
+
+  
+}
+
+/* Wave divider */
+.hero-wave {
+  line-height: 0;
+  overflow: hidden;
+}
+
+.hero-wave img {
+  display: block;
+  width: 100%;
+}
+
+/* ===== 最新活動 ===== */
+.news {
+  padding: 64px 0 80px;
+  background: #fff;
+}
+
+.news-list {
+  list-style: none;
+  padding: 0;
+}
+
+.news-item a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.news-item a:hover {
+  color: var(--secondary-dark);
+}
+
+.news-tag {
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.news-title {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.news-date {
+  flex-shrink: 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-left: auto;
+}
+
+/* ===== 行事曆 ===== */
+.calendar {
+  padding: 64px 0 80px;
+  background: linear-gradient(to bottom, #ffffff, var(--bg));
+}
+
+.cal-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  height: 100%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.cal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.cal-month {
+  font-size: 22px;
+  color: var(--text);
+}
+
+.cal-month strong {
+  font-family: 'Abhaya Libre', serif;
+  font-size: 42px;
+  font-weight: 600;
+}
+
+.cal-star {
+  width: 16px;
+  height: 16px;
+}
+
+.cal-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cal-card ul li {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  padding-left: 14px;
+  position: relative;
+}
+
+.cal-card ul li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--text-secondary);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #0e0e2c;
+  border-radius: 24px 24px 0 0;
+  color: #fff;
+  padding: 28px 0 20px;
+  text-align: center;
+}
+
+.footer-info {
+  font-size: 14px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  margin-left: 16px;
+}
+
+.footer-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  filter: brightness(0) invert(1);
+}
