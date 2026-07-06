@@ -1,0 +1,25 @@
+<svg width="40" height="150" viewBox="0 0 40 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_328_1533)">
+<g filter="url(#filter0_f_328_1533)">
+<rect x="2" y="51.5967" width="39.1934" height="4.13445" rx="2.06722" transform="rotate(-30 2 51.5967)" fill="#FAD782"/>
+<rect x="1" y="36.5967" width="39.1934" height="4.13445" rx="2.06722" transform="rotate(-30 1 36.5967)" fill="#FAD782"/>
+<rect x="1" y="19.5967" width="39.1934" height="4.13445" rx="2.06722" transform="rotate(-30 1 19.5967)" fill="#FAD782"/>
+<rect x="1" y="129.597" width="39.1934" height="4.13445" rx="2.06722" transform="rotate(-30 1 129.597)" fill="#FAD782"/>
+<rect x="1" y="98.5967" width="39.1934" height="4.13445" rx="2.06722" transform="rotate(-30 1 98.5967)" fill="#FAD782"/>
+<rect x="1" y="67.6924" width="39.1934" height="4.13445" rx="2.06722" transform="rotate(-30 1 67.6924)" fill="#FAD782"/>
+<rect x="1" y="114.597" width="39.1934" height="4.13445" rx="2.06722" transform="rotate(-30 1 114.597)" fill="#FAD782"/>
+<rect x="1" y="83.5967" width="39.1934" height="4.13445" rx="2.06722" transform="rotate(-30 1 83.5967)" fill="#FAD782"/>
+<rect x="1" y="145.597" width="39.1934" height="4.13445" rx="2.06722" transform="rotate(-30 1 145.597)" fill="#FAD782"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_328_1533" x="-0.1" y="-1.1" width="39.2098" height="151.377" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="0.55" result="effect1_foregroundBlur_328_1533"/>
+</filter>
+<clipPath id="clip0_328_1533">
+<rect width="40" height="150" fill="white"/>
+</clipPath>
+</defs>
+</svg>
