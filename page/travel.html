@@ -13,33 +13,14 @@
 <body>
 
   <!-- ===== HEADER ===== -->
-  <header class="header">
-    <div class="header-main">
-      <div class="container d-flex justify-content-between align-items-center">
-        <a href="../index.html" class="logo">
-          <img src="../images/logo.svg" alt="聯合福委會">
-        </a>
-        <div class="header-right">
-          <nav class="utility-nav d-flex justify-content-end align-items-center gap-2">
-            <a href="#">尋找工研人</a>
-            <span class="divider">|</span>
-            <a href="#">電子簽核系統</a>
-            <span class="divider">|</span>
-            <a href="#">ITRIWeb</a>
-          </nav>
-          <nav class="main-nav d-flex gap-4">
-            <a href="#">員工福利</a>
-            <a href="travel.html" class="active">旅遊活動</a>
-            <a href="#">社團與競賽</a>
-            <a href="#">關於聯合福委會</a>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
+  <div id="site-nav"></div>
+  <script src="/js/nav.js"></script>
 
   <!-- ===== BANNER ===== -->
   <section class="page-banner">
+    <img src="../images/deco-firework-1.svg" alt="" class="hero-deco-firework" aria-hidden="true">
+    <img src="../images/deco-firework-2.svg" alt="" class="hero-deco-firework-2" aria-hidden="true">
+    <img src="../images/deco-firework-3.svg" alt="" class="hero-deco-firework-3" aria-hidden="true">
     <!-- 裝飾元素 -->
     <img src="../images/travel/deco-star-lg.png"   alt="" class="banner-deco deco-right-lg" aria-hidden="true">
     <img src="../images/travel/deco-star-sm.png"   alt="" class="banner-deco deco-right-sm" aria-hidden="true">
@@ -67,6 +48,7 @@
   </section>
 
   <!-- ===== 次要導航 ===== -->
+  <div class="secondary-nav-sentinel"></div>
   <div class="secondary-nav-wrap">
     <nav class="secondary-nav">
       <a href="#travel-activities" class="sec-nav-tab active">旅遊活動</a>
@@ -217,7 +199,7 @@
         <h2 class="content-title">相關文件</h2>
         <ul class="doc-list">
           <li class="doc-item">
-            <img src="../images/travel/icon-file-text.svg" alt="" class="doc-icon">
+            <img src="../images/icon/icon-file-text.svg" alt="" class="doc-icon">
             <a href="#" class="doc-link">聯合福委會 -「旅遊組」作業規範</a>
           </li>
         </ul>
@@ -231,15 +213,15 @@
     <div class="container">
       <div class="footer-info d-flex justify-content-center gap-4">
         <span class="footer-contact-item">
-          <img src="../images/travel/icon-mail.svg"  alt="" class="footer-icon">
+          <img src="../images/icon/icon-mail.svg"  alt="" class="footer-icon">
           EMail：welfare@itri.org.tw
         </span>
         <span class="footer-contact-item">
-          <img src="../images/travel/icon-hotel.svg" alt="" class="footer-icon">
+          <img src="../images/icon/icon-hotel.svg" alt="" class="footer-icon">
           Office：中興院區51館 B201-6
         </span>
         <span class="footer-contact-item">
-          <img src="../images/travel/icon-phone.svg" alt="" class="footer-icon">
+          <img src="../images/icon/icon-phone.svg" alt="" class="footer-icon">
           Ext：12666
         </span>
       </div>
@@ -247,5 +229,45 @@
     </div>
   </footer>
 
+  <script>
+    (function () {
+      const header = document.querySelector('.header');
+      const navWrap = document.querySelector('.secondary-nav-wrap');
+      const sentinel = document.querySelector('.secondary-nav-sentinel');
+
+      function setHeaderVar() {
+        const h = header ? header.offsetHeight : 89;
+        document.documentElement.style.setProperty('--header-h', h + 'px');
+        navWrap.style.top = h + 'px';
+      }
+      setHeaderVar();
+      window.addEventListener('resize', setHeaderVar);
+
+      const observer = new IntersectionObserver(
+        ([entry]) => navWrap.classList.toggle('is-sticky', !entry.isIntersecting),
+        { rootMargin: '-1px 0px 0px 0px', threshold: 0 }
+      );
+      if (sentinel) observer.observe(sentinel);
+
+      // Active tab + smooth scroll with offset
+      const tabs = document.querySelectorAll('.sec-nav-tab');
+
+      function getOffset() {
+        return (header ? header.offsetHeight : 0) + navWrap.offsetHeight;
+      }
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', e => {
+          const target = document.querySelector(tab.getAttribute('href'));
+          if (!target) return;
+          e.preventDefault();
+          const top = target.getBoundingClientRect().top + window.scrollY - getOffset();
+          window.scrollTo({ top, behavior: 'smooth' });
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
