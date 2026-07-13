@@ -3,10 +3,10 @@
   const isInner = path !== '/' && !path.endsWith('/index.html');
 
   const navItems = [
-    { label: '員工福利',    href: '#' },
+    { label: '員工福利',    href: '/page/welfare.html' },
     { label: '旅遊活動',    href: '/page/travel.html' },
-    { label: '社團與競賽',  href: '#' },
-    { label: '關於聯合福委會', href: '#' },
+    { label: '社團與競賽',  href: '/page/club.html' },
+    { label: '關於聯合福委會', href: '/page/about.html' },
   ];
 
   const navLinks = navItems.map(item => {
