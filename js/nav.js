@@ -28,9 +28,9 @@
         </a>
         <div class="header-right">
           <nav class="utility-nav d-flex justify-content-end align-items-center gap-2">
-            <a href="#">尋找工研人</a>
+            <a href="https://empfinder.itri.org.tw/WebPage/ED_QueryIndex.aspx">尋找工研人</a>
             <span class="divider">|</span>
-            <a href="#">電子簽核系統</a>
+            <a href="https://flow.itri.org.tw/ecpweb/FramePro/MainFrame.aspx?SSOToken=ITRI&UserID=B10523&VerifySite=itri.org.tw">電子簽核系統</a>
             <span class="divider">|</span>
             <a href="https://itriweb.itri.org.tw/">ITRIWeb</a>
           </nav>
